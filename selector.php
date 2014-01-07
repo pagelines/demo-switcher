@@ -182,7 +182,7 @@ class PageLines_Selector {
 	}
 	
 	function showbar() {
-		if( isset( $_GET['dobar'] ) )
+		if( isset( $_GET['dobar'] ) && ! is_user_logged_in() )
 			return true;
 	}
 }
