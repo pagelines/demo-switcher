@@ -5,8 +5,21 @@
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	color: #767676;
-	z-index: 99999;
-	width: 100%;
+	z-index: 51;
+}
+
+#switcher li {
+	display: block;
+	float: left;
+}
+
+#logo a {
+	border-right: 1px solid #333;
+	background-position: 8px -121px;
+	display: block;
+	height: 55px;
+	text-indent: -9999px;
+	width: 120px;
 }
 
 #theme_select {
@@ -29,19 +42,6 @@ padding: 20px;
 
 }
 
-.center {
-
-margin: auto;
-
-}
-
-.center ul li {
-
-display: inline;
-float: left;
-position: relative;
-
-}
 
 .center ul li ul {
 
@@ -57,7 +57,7 @@ box-shadow: 0px 0px 5px #444;
 
 .center ul li ul li {
 
-background: #fff;
+background: red;
 
 }
 
@@ -66,37 +66,26 @@ background: #fff;
 display: block;
 padding: 10px;
 min-width: 189px;
-font-size: 14px;
 color: #333;
-text-transform: uppercase;
-font-weight: 700;
 
 }
 
-.center ul li ul li:first-child {
-
-border-top-left-radius: 5px;
-border-top-right-radius: 5px;
--moz-border-radius-topleft: 5px;
--moz-border-radius-topright: 5px;
--webkit-border-top-left-radius: 5px;
--webkit-border-top-right-radius: 5px;
-padding-top: 3px;
-
+.sprite{
+	background-image: url(switcher-sprite.png);
+	background-size: 500px 200px;
+	background-repeat: no-repeat;
 }
 
-.center ul li ul li:last-child {
 
-border-bottom-left-radius: 5px;
-border-bottom-right-radius: 5px;
--moz-border-radius-bottomleft: 5px;
--moz-border-radius-bottomright: 5px;
--webkit-border-bottom-left-radius: 5px;
--webkit-border-bottom-right-radius: 5px;
 
+/*=================================*/
+/* RIGHT SIDE
+/*=================================*/
+#switcher #right-side {
+	float: right;
 }
 
-li.purchase a {
+#right-side a.purchase {
 	background: #2A90FF;
 	color: #FFF;
 	display: block;
@@ -106,24 +95,61 @@ li.purchase a {
 	padding: 0 30px;
 }
 
-li.purchase a:hover{
+#right-side a.purchase:hover{
+	color: #FFF;
 	background: #1A87FF;
 }
 
-li.remove_frame {
-
-margin-left: 20px;
-text-transform: uppercase;
-padding-top: 20px;
-
+#right-side a.remove_frame{
+	background-position: -122px -22px;
+	display: block;
+	float: left;
+	height: 55px;
+	text-indent: -9999px; 
+	width: 55px;
 }
 
-li.remove_frame a {
-
-padding: 17px 10px 17px 40px;
-background: url(cross.png) no-repeat 0px 5px;
-
+#right-side a.remove_frame:hover {
+	background-position: -122px -70px;
 }
+
+/*=================================*/
+/* RESIZE
+/*=================================*/
+.resize-icon {
+	display: block;
+	height: 55px;
+	width: 55px;
+}
+
+.resize-icon.active {
+	background-color: #2D2F34;
+} 
+
+#resize li {
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+	display: inline-block;
+	margin-left: -1px;
+}
+
+.resize-icon.iphone { background-position: -224px -23px; }
+.resize-icon.iphone:hover { background-position: -224px -73px; }
+.resize-icon.iphone.active  { background-position: -224px -123px; }
+
+.resize-icon.ipad { background-position: -324px -23px; }
+.resize-icon.ipad:hover { background-position: -324px -73px; }
+.resize-icon.ipad.active { background-position: -324px -123px; }
+
+.resize-icon.desktop { background-position: -424px -23px; }
+.resize-icon.desktop:hover { background-position: -424px -73px; }
+.resize-icon.desktop.active { background-position: -424px -123px; }
+
+
+
+/*=================================*/
+/* IFRAME
+/*=================================*/
 
 #iframe {
 

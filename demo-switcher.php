@@ -96,17 +96,17 @@ class PageLines_Selector {
 
         	});
 
-			jQuery(".desktop-resize").click(function () {
+			jQuery(".desktop").click(function () {
 				
 				jQuery("#iframe").attr("width", "100%")
 			})
 
-			jQuery(".tablet-resize").click(function () {
+			jQuery(".ipad").click(function () {
 				
 				jQuery("#iframe").attr("width", "768px")
 			})
 			
-			jQuery(".mobile-resize").click(function () {
+			jQuery(".iphone").click(function () {
 				
 				jQuery("#iframe").attr("width", "480px")
 			})
@@ -116,8 +116,8 @@ class PageLines_Selector {
 
 				var theme_data = jQuery(this).attr("rel").split(",");
 
-	        	jQuery("li.purchase a").attr("href", theme_data[1]);
-	        	jQuery("li.remove_frame a").attr("href", theme_data[0]);
+	        	jQuery("a.purchase").attr("href", theme_data[1]);
+	        	jQuery("a.remove_frame").attr("href", theme_data[0]);
 	        	jQuery("#iframe").attr("src", theme_data[0]);
 	        	jQuery(".center ul li ul").hide();
 				jQuery('#theme_select').text(theme_data[2])
@@ -147,11 +147,9 @@ class PageLines_Selector {
 		?>
 		<div id="switcher">
 
-			<div class="center">
-
 			<ul>
 
-			<li><img src="<?php echo plugins_url( 'assets/logo.png', __FILE__);?>" alt="" /></li>
+			<li id="logo"><a href="http://themes.pagelines.com"><img src="<?php echo plugins_url( 'assets/logo.png', __FILE__);?>" alt="PageLines Themes" /></a></li>
 
 			<li id="theme_list"><a id="theme_select" href="#"><?php echo $current_theme_name; ?></a>
 
@@ -171,13 +169,13 @@ class PageLines_Selector {
 
 			</li>	
 			
-			<li class="desktop-resize"><a href="#">desktop</a></li>
-			<li class="tablet-resize"><a href="#">tablet</a></li>
-			<li class="mobile-resize"><a href="#">mobile</a></li>
-			<li class="remove_frame"><a href="<?php echo $current_theme_url; ?>">CLOSE</a></li>
-			<li class="purchase" rel="<?php echo $current_theme_purchase_url; ?>"><a href="<?php echo $current_theme_purchase_url; ?>">Purchase</a></li>		
-			
-			</div>
+			<li><a href="#" class="sprite resize-icon desktop">desktop</a></li>
+			<li><a href="#" class="sprite resize-icon ipad">tablet</a></li>
+			<li><a href="#" class="sprite resize-icon iphone">mobile</a></li>
+			<li id="right-side"  rel="<?php echo $current_theme_purchase_url; ?>">
+				<a href="<?php echo $current_theme_purchase_url; ?>" class="purchase">Purchase</a>
+				<a href="<?php echo $current_theme_url; ?>" class="sprite remove_frame">CLOSE</a>
+			</li>
 
 			</ul>
 
