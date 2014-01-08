@@ -163,7 +163,7 @@ class PageLines_Selector {
 
 			<li id="logo"><a href="http://themes.pagelines.com" class="sprite">Logo</a></li>
 
-			<li id="theme-list"><a id="theme-dropdown-select" class="sprite" href="#">Choose a theme</a>
+			<li id="theme-list"><a id="theme-dropdown-select" class="sprite" href="#">Choose A Theme</a>
 
 				<ul id="theme-dropdown">
 
