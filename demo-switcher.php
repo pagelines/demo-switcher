@@ -15,6 +15,7 @@ class PageLines_Selector {
 		add_action( 'wp_head', array( $this, 'head' ) );
 		add_action( 'template_redirect', array( $this, 'draw_bar' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
+		add_shortcode( 'pl_demo_switcher', array( $this, 'shortcode' ) );
 	}
 	
 	function scripts() {
@@ -191,6 +192,43 @@ class PageLines_Selector {
 	function showbar() {
 		if( isset( $_GET['dobar'] ) && ! is_user_logged_in() )
 			return true;
+	}
+	
+	function shortcode() {
+		$themes = $this->themes;
+			
+		ob_start();
+		?>
+		
+		<script>
+		jQuery(document).ready(function () {
+			
+			jQuery(".theme-demo-wrap ul li a").hover(function () {
+				var slug = jQuery(this).attr("rel")
+				jQuery(".demo-shot").attr("src", slug);
+			})
+		})
+		</script>
+		
+		<div class="theme-demo-wrap">
+			<ul class="">
+				<?php
+				foreach( $themes as $slug => $data ) {
+					printf( '<li><a class="demo-hover" rel="%s" href="%s">%s</a></li>',
+					sprintf( '%s/themes/%s/screenshot.png', WP_CONTENT_URL, $slug ),
+					sprintf( '%s/?dobar', $data['demo'] ),
+					$data['name']
+				);
+				}
+				?>
+			</ul>
+			
+			<?php printf( '<img class="demo-shot" src="%s/screenshot.png" />', get_template_directory_uri() ); ?>
+			
+		</div>
+		<?php
+		
+		return ob_get_clean();	
 	}
 }
 
