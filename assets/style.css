@@ -1,78 +1,11 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	outline: 0px;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-
-/* remember to define focus styles! */
-:focus {
-	outline: 0;
-}
-
-/* remember to highlight inserts somehow! */
-ins {
-	text-decoration: none;
-}
-del {
-	text-decoration: line-through;
-}
-
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-a {
-
-text-decoration: none;
-color: #fff;
-
-}
-
-body {
-	overflow: hidden;
-	font-family: "Kreon";
-	font-weight: 300;
-	color: #333;
-}
-
 #switcher {
-	height: 50px;
-	background: #1a1b1d url(bg.png) repeat-x;
-	border-bottom: 10px solid #262626;
-	border-bottom: 10px solid rgba(255,255,255,0.03);
-	box-shadow: 0px 0px 5px #333;
-	-moz-box-shadow: 0px 0px 5px #333;
-	-webkit-box-shadow: 0px 0px 5px #333;
+	width: 100%;
+	background: #252629;
+	height: 55px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #767676;
 	z-index: 99999;
-	position: fixed;
 	width: 100%;
 }
 
@@ -99,8 +32,6 @@ padding: 20px;
 .center {
 
 margin: auto;
-width: 960px;
-padding-top: 2px;
 
 }
 
@@ -165,19 +96,18 @@ border-bottom-right-radius: 5px;
 
 }
 
-li.purchase {
-
-margin-left: 50px;
-text-transform: uppercase;
-padding-top: 20px;
-
+li.purchase a {
+	background: #2A90FF;
+	color: #FFF;
+	display: block;
+	font-size: 15px;
+	float: left;
+	line-height: 55px;
+	padding: 0 30px;
 }
 
-li.purchase a {
-
-padding: 17px 10px 17px 40px;
-background: url(trolley.png) no-repeat 0px 4px;
-
+li.purchase a:hover{
+	background: #1A87FF;
 }
 
 li.remove_frame {
@@ -201,13 +131,6 @@ margin-top: 60px;
 
 }
 .iframe-wrap {
-	display:block;
-	margin-left: auto ;
-  margin-right: auto ;
-	text-align:center;
-}
-
-.theme-demo-wrap {
 	display:block;
 	margin-left: auto ;
   margin-right: auto ;
