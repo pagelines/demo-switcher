@@ -151,7 +151,7 @@ class PageLines_Selector {
 
 			<ul>
 
-			<li id="logo"><a href="http://themes.pagelines.com"><img src="<?php echo plugins_url( 'assets/logo.png', __FILE__);?>" alt="PageLines Themes" /></a></li>
+			<li id="logo"><a href="http://themes.pagelines.com" class="sprite">Logo</a></li>
 
 			<li id="theme-list"><a id="theme-dropdown-select" class="sprite" href="#"><?php echo $current_theme_name; ?></a>
 

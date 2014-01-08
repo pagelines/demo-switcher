@@ -105,7 +105,7 @@ color: #333;
 
 
 /*=================================*/
-/* Dropdown Select	theme_list	theme_select	
+/* Dropdown Select	
 /*=================================*/
 #theme-dropdown-select {
 	background-position: 172px -22px;
@@ -147,8 +147,8 @@ color: #333;
 	width: 250px;
 	z-index: 51;
 	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-		    box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
 }
 
 #theme-dropdown li {
@@ -230,12 +230,13 @@ color: #333;
 
 #iframe {
 
-margin-top: 60px;
+margin-top: 20px;
 
 }
 .iframe-wrap {
-	display:block;
+	background: url(binding_dark.png) repeat 0 0;
+	display:block; 
 	margin-left: auto ;
-  margin-right: auto ;
+  	margin-right: auto ;
 	text-align:center;
 }
