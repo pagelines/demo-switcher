@@ -174,7 +174,7 @@ class PageLines_Selector {
 			<li class="desktop-resize"><a href="#">desktop</a></li>
 			<li class="tablet-resize"><a href="#">tablet</a></li>
 			<li class="mobile-resize"><a href="#">mobile</a></li>
-			<li class="remove_frame"><a href=#>CLOSE</a></li>
+			<li class="remove_frame"><a href="<?php echo $current_theme_url; ?>">CLOSE</a></li>
 			<li class="purchase" rel="<?php echo $current_theme_purchase_url; ?>"><a href="<?php echo $current_theme_purchase_url; ?>">Purchase</a></li>		
 			
 			</div>
@@ -201,8 +201,7 @@ class PageLines_Selector {
 		?>
 		
 		<script>
-		jQuery(document).ready(function () {
-			
+		jQuery(document).ready(function () {			
 			jQuery(".theme-demo-wrap ul li a").hover(function () {
 				var slug = jQuery(this).attr("rel")
 				jQuery(".demo-shot").attr("src", slug);
