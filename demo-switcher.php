@@ -121,6 +121,8 @@ class PageLines_Selector {
 	        	jQuery("#iframe").attr("src", theme_data[0]);
 	        	jQuery("#switcher ul li ul").hide();
 				jQuery('#theme-dropdown-select').text(theme_data[2])
+				jQuery("li a").removeClass("active");
+				jQuery('#theme-' + theme_data[3]).addClass('active')
         	theme_list_open = false;
 
         	return false;
@@ -159,7 +161,7 @@ class PageLines_Selector {
 
 					foreach ($this->themes as $i => $theme) :
 
-					echo '<li><a href="#" rel="' . $theme['demo'] . ',' . $theme['url'] . ',' . $theme['name'] . '">' . ucfirst($theme['name']) . ' ' . $theme['type'] . '</a></li>';
+					echo '<li><a id="theme-' . $i . '" href="#" rel="' . $theme['demo'] . ',' . $theme['url'] . ',' . $theme['name'] . ',' . $i . '">' . ucfirst($theme['name']) . ' ' . $theme['type'] . '</a></li>';
 
 					endforeach;
 
