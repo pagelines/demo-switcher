@@ -19,6 +19,8 @@ class PageLines_Selector {
 	}
 	
 	function scripts() {
+		if( ! $this->showbar() )
+			return;
 		wp_enqueue_script( 'jquery' );
 		wp_register_style( 'pl_bar', plugins_url('assets/style.css', __FILE__) );
 		wp_enqueue_style( 'pl_bar' );
@@ -123,11 +125,19 @@ class PageLines_Selector {
 				jQuery('#theme-dropdown-select').text(theme_data[2])
 				jQuery("li a").removeClass("active");
 				jQuery('#theme-' + theme_data[3]).addClass('active')
+				jQuery(".resize-icon").removeClass("active");
+				jQuery(".desktop").addClass("active");
         	theme_list_open = false;
 
         	return false;
 
         	});
+
+			jQuery(".resize-icon").click(function () {
+				jQuery(".resize-icon").removeClass("active");
+				jQuery(this).addClass('active')
+			})
+
 
         });
 
@@ -171,7 +181,7 @@ class PageLines_Selector {
 
 			</li>	
 			
-			<li><a href="#" class="sprite resize-icon desktop">desktop</a></li>
+			<li><a href="#" class="sprite resize-icon desktop active">desktop</a></li>
 			<li><a href="#" class="sprite resize-icon ipad">tablet</a></li>
 			<li><a href="#" class="sprite resize-icon iphone">mobile</a></li>
 			<li id="right-side"  rel="<?php echo $current_theme_purchase_url; ?>">
