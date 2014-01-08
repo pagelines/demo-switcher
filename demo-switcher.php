@@ -1,4 +1,11 @@
-<?php 
+<?php
+/*
+Plugin Name: PageLines Demo Switcher Tool
+Description: Must be network activated OR mu-plugin
+Version: 0.4.91
+Author: PageLines
+PageLines: true
+*/
 class PageLines_Selector {
 	
 	function __construct() {
