@@ -161,7 +161,7 @@ class PageLines_Selector {
 
 					foreach ($this->themes as $i => $theme) :
 
-					echo '<li><a id="theme-' . $i . '" href="#" rel="' . $theme['demo'] . ',' . $theme['url'] . ',' . $theme['name'] . ',' . $i . '">' . ucfirst($theme['name']) . ' ' . $theme['type'] . '</a></li>';
+					echo '<li><a id="theme-' . $i . '" href="#" rel="' . $theme['demo'] . ',' . $theme['url'] . ',' . $theme['name'] . ',' . $i . '">' . ucfirst($theme['name']) . ' ' . '<span>' . $theme['type'] . '</span></a></li>';
 
 					endforeach;
 
