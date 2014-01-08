@@ -23,8 +23,6 @@
 }
 
 #theme_select {
-	margin-top: 9px;
-	margin-left: 72px;
 	background: url(dropdown.png) no-repeat;
 	width: 200px;
 	display: block;
@@ -33,17 +31,8 @@
 	font-size: 14px;	
 }
 
-#theme_dropdown_list {
 
-border-radius: 10px;
--moz-border-radius: 10px;
--webkit-border-radius: 10px;
-padding: 20px;
-
-}
-
-
-.center ul li ul {
+#switcher ul li ul {
 
 display: none;
 margin-left: 72px;
@@ -55,13 +44,13 @@ box-shadow: 0px 0px 5px #444;
 
 }
 
-.center ul li ul li {
+#switcher ul li ul li {
 
 background: red;
 
 }
 
-.center ul li ul li a {
+#switcher ul li ul li a {
 
 display: block;
 padding: 10px;
@@ -113,6 +102,89 @@ color: #333;
 	background-position: -122px -70px;
 }
 
+
+
+/*=================================*/
+/* Dropdown Select	theme_list	theme_select	
+/*=================================*/
+#theme-dropdown-select {
+	background-position: 172px -22px;
+	color: #4d5257;
+	border-right: 1px solid #333;
+	display: block;
+	line-height: 55px;
+	padding: 0 20px;
+	width: 250px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+#theme-dropdown-select:hover,
+#theme-dropdown-select.active {
+	background-position: 172px -72px;
+	color: #FFF;
+	position: relative;
+	z-index: 52;
+}
+
+#theme-dropdown-select span { 
+	display: none;
+}
+
+/*=================================*/
+/* Dropdown
+/*=================================*/
+#theme-dropdown {
+	background: #252629;
+	border-radius: 0 0 5px 5px;
+	display: none;
+	margin: 0;
+	max-height: 500px;
+	overflow: auto;
+	padding: 0 0 10px 0;
+	position: absolute;
+	width: 250px;
+	z-index: 51;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		    box-sizing: border-box;
+}
+
+#theme-dropdown li {
+	display: block;
+	float: none;
+}
+
+#theme-dropdown li a {
+	display: block;
+	line-height: 35px;
+	padding: 0 20px;	
+}
+
+#theme-dropdown li a:hover {
+	background-color: #2D2F34;
+}
+
+#theme-dropdown li a span {
+	background: #2D2F34;
+	border-radius: 20px;
+	float: right;
+	font-size: 12px;
+	line-height: 22px;
+	margin: 6px 0 0 0;
+	padding: 0px 8px;
+	text-transform: capitalize;
+}
+
+#theme-dropdown li a span.new,
+#theme-dropdown li a span.free, 
+#theme-dropdown li a:hover span {
+	background: #2A90FF;
+	color: #FFF;
+}
+
+
 /*=================================*/
 /* RESIZE
 /*=================================*/
@@ -120,6 +192,11 @@ color: #333;
 	display: block;
 	height: 55px;
 	width: 55px;
+	text-indent:-9999px;
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+	display: inline-block;
+	margin-left: -1px;
 }
 
 .resize-icon.active {

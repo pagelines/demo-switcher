@@ -76,11 +76,11 @@ class PageLines_Selector {
 
         	}).resize();
 
-        	jQuery("#theme_select").click( function () {
+        	jQuery("#theme-dropdown").click( function () {
 
         		if (theme_list_open == true) {
 
-        		jQuery(".center ul li ul").hide();
+        		jQuery(".theme-dropdown").hide();
 
         		theme_list_open = false;
 
@@ -111,7 +111,7 @@ class PageLines_Selector {
 				jQuery("#iframe").attr("width", "480px")
 			})
 
-        	jQuery("#theme_list ul li a").click(function () {
+        	jQuery("#theme-list ul li a").click(function () {
 
 
 				var theme_data = jQuery(this).attr("rel").split(",");
@@ -120,7 +120,7 @@ class PageLines_Selector {
 	        	jQuery("a.remove_frame").attr("href", theme_data[0]);
 	        	jQuery("#iframe").attr("src", theme_data[0]);
 	        	jQuery(".center ul li ul").hide();
-				jQuery('#theme_select').text(theme_data[2])
+				jQuery('#theme-dropdown').text(theme_data[2])
         	theme_list_open = false;
 
         	return false;
@@ -151,9 +151,9 @@ class PageLines_Selector {
 
 			<li id="logo"><a href="http://themes.pagelines.com"><img src="<?php echo plugins_url( 'assets/logo.png', __FILE__);?>" alt="PageLines Themes" /></a></li>
 
-			<li id="theme_list"><a id="theme_select" href="#"><?php echo $current_theme_name; ?></a>
+			<li id="theme-list"><a id="theme-dropdown-select" class="sprite" href="#"><?php echo $current_theme_name; ?></a>
 
-				<ul>
+				<ul id="theme-dropdown">
 
 					<?php
 
