@@ -150,7 +150,7 @@ class PageLines_Selector {
 
 			<ul>
 
-			<li><img src="<?php echo $this->url . '/assets/logo.png';?>" alt="" /></li>
+			<li><img src="<?php echo plugins_url( 'assets/logo.png', __FILE__);?>" alt="" /></li>
 
 			<li id="theme_list"><a id="theme_select" href="#"><?php echo $current_theme_name; ?></a>
 
