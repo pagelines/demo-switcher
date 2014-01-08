@@ -106,16 +106,28 @@ class PageLines_Selector {
 			jQuery(".desktop").click(function () {
 				
 				jQuery("#iframe").attr("width", "100%")
+				jQuery("#iframe").removeClass("wrap-iphone");
+				jQuery("#iframe").removeClass("wrap-tablet");
+				jQuery("#iframe").removeClass("wrap-desktop");
+				jQuery("#iframe").addClass("wrap-desktop");				
 			})
 
 			jQuery(".ipad").click(function () {
 				
 				jQuery("#iframe").attr("width", "768px")
+				jQuery("#iframe").removeClass("wrap-iphone");
+				jQuery("#iframe").removeClass("wrap-tablet");
+				jQuery("#iframe").removeClass("wrap-desktop");
+				jQuery("#iframe").addClass("wrap-tablet");
 			})
 			
 			jQuery(".iphone").click(function () {
 				
 				jQuery("#iframe").attr("width", "480px")
+				jQuery("#iframe").removeClass("wrap-iphone");
+				jQuery("#iframe").removeClass("wrap-tablet");
+				jQuery("#iframe").removeClass("wrap-desktop");
+				jQuery("#iframe").addClass("wrap-iphone");
 			})
 
         	jQuery("#theme-list ul li a").click(function () {
@@ -202,7 +214,7 @@ class PageLines_Selector {
 			</ul>
 
 		</div>
-<div class="iframe-wrap">
+<div class='iframe-wrap'>
 <iframe id="iframe" src="<?php echo $current_theme_url; ?>" frameborder="0" width="100%"></iframe>
 </div>
 	<?php

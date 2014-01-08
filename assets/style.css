@@ -201,7 +201,6 @@
 /*=================================*/
 
 #iframe {
-	margin: 40px auto;
 	height: 100%;
 }
 .iframe-wrap {
@@ -214,3 +213,7 @@
 #site{
 	display:none;
 }
+
+.wrap-desktop{ margin: 0 auto; !important}
+.wrap-tablet{ margin: 40px auto; !important}
+.wrap-iphone{ margin: 40px auto; !important}
