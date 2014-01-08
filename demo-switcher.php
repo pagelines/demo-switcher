@@ -76,7 +76,7 @@ class PageLines_Selector {
 
         	}).resize();
 
-        	jQuery("#theme-dropdown").click( function () {
+        	jQuery("#theme-dropdown-select").click( function () {
 
         		if (theme_list_open == true) {
 
@@ -86,7 +86,7 @@ class PageLines_Selector {
 
         		} else {
 
-        		jQuery(".center ul li ul").show();         		
+        		jQuery("#switcher ul li ul").show();         		
 
         		theme_list_open = true;
 
@@ -119,8 +119,10 @@ class PageLines_Selector {
 	        	jQuery("a.purchase").attr("href", theme_data[1]);
 	        	jQuery("a.remove_frame").attr("href", theme_data[0]);
 	        	jQuery("#iframe").attr("src", theme_data[0]);
-	        	jQuery(".center ul li ul").hide();
-				jQuery('#theme-dropdown').text(theme_data[2])
+	        	jQuery("#switcher ul li ul").hide();
+				jQuery('#theme-dropdown-select').text(theme_data[2])
+				jQuery("li a").removeClass("active");
+				jQuery('#theme-' + theme_data[3]).addClass('active')
         	theme_list_open = false;
 
         	return false;
@@ -159,7 +161,7 @@ class PageLines_Selector {
 
 					foreach ($this->themes as $i => $theme) :
 
-					echo '<li><a href="#" rel="' . $theme['demo'] . ',' . $theme['url'] . ',' . $theme['name'] . '">' . ucfirst($theme['name']) . ' ' . $theme['type'] . '</a></li>';
+					echo '<li><a id="theme-' . $i . '" href="#" rel="' . $theme['demo'] . ',' . $theme['url'] . ',' . $theme['name'] . ',' . $i . '">' . ucfirst($theme['name']) . ' ' . $theme['type'] . '</a></li>';
 
 					endforeach;
 
