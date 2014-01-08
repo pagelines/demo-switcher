@@ -21,9 +21,10 @@ class PageLines_Selector {
 	function scripts() {
 		if( ! $this->showbar() )
 			return;
-		wp_enqueue_script( 'jquery' );
 		wp_register_style( 'pl_bar', plugins_url('assets/style.css', __FILE__) );
+		wp_register_script( 'pl-track', plugins_url('assets/tracker.js', __FILE__), array( 'jquery' ) );
 		wp_enqueue_style( 'pl_bar' );
+		wp_enqueue_script( 'pl-track' );
 	}
 	function init() {
 		$themes = wp_get_themes();
@@ -78,11 +79,11 @@ class PageLines_Selector {
 
         	}).resize();
 
-        	jQuery("#theme-dropdown-select").click( function () {
+        	jQuery("#theme-list").click( function () {
 
         		if (theme_list_open == true) {
 
-        		jQuery(".theme-dropdown").hide();
+        		jQuery("#switcher ul li ul").hide();
 
         		theme_list_open = false;
 
@@ -97,6 +98,10 @@ class PageLines_Selector {
         		return false;
 
         	});
+
+			jQuery(document).click(function() {
+			    jQuery("#switcher ul li ul").hide()
+			});
 
 			jQuery(".desktop").click(function () {
 				
@@ -138,6 +143,11 @@ class PageLines_Selector {
 				jQuery(this).addClass('active')
 			})
 
+			jQuery('.iframe-wrap iframe').iframeTracker({
+		        blurCallback: function(){
+		            jQuery("#switcher ul li ul").hide();
+		        }
+		    });
 
         });
 
