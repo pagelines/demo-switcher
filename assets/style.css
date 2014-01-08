@@ -31,7 +31,7 @@
 }
 
 .sprite{
-	background-image: url(switcher-sprite.png);
+	background-image: url(switcher-sprite@2x.png);
 	background-size: 500px 200px;
 	background-repeat: no-repeat;
 }
