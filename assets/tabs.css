@@ -61,7 +61,7 @@
 	
 
 	/* Standard-resolution devices */
-	.icons {
+	.screen-wrapper {
 		background: url(images/screen-wrapper.png) no-repeat 50% 50%;
 	}
 
