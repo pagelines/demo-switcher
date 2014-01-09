@@ -19,10 +19,16 @@ class PageLines_Selector {
 	}
 	
 	function scripts() {
-		if( ! $this->showbar() )
-			return;
+		
+		wp_register_style( 'pl_tabs', plugins_url('assets/tabs.css', __FILE__) );
 		wp_register_style( 'pl_bar', plugins_url('assets/style.css', __FILE__) );
 		wp_register_script( 'pl-track', plugins_url('assets/tracker.js', __FILE__), array( 'jquery' ) );
+		
+		wp_enqueue_style( 'pl_tabs' );
+
+		if( ! $this->showbar() )
+			return;
+
 		wp_enqueue_style( 'pl_bar' );
 		wp_enqueue_script( 'pl-track' );
 	}
