@@ -242,6 +242,8 @@ class PageLines_Selector {
 		jQuery(document).ready(function () {			
 			jQuery(".theme-demo-wrap ul li a").hover(function () {
 				var slug = jQuery(this).attr("rel")
+				jQuery("li a").removeClass("active");
+				jQuery(this).addClass('active')
 				jQuery(".demo-shot").attr("src", slug);
 			})
 		})
