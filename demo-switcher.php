@@ -260,7 +260,7 @@ class PageLines_Selector {
 				?>
 			</ul>
 			
-			<div class="mba-wrapper">
+			<div class="screen-wrapper">
 			<?php printf( '<img class="demo-shot" src="%s/screenshot.png" />', get_template_directory_uri() ); ?>
 			</div>
 			
