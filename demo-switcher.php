@@ -252,12 +252,15 @@ class PageLines_Selector {
 		<div class="theme-demo-wrap">
 			<ul class="theme-list">
 				<?php
+				$i = ' active';
 				foreach( $themes as $slug => $data ) {
-					printf( '<li><a class="demo-hover" rel="%s" href="%s">%s</a></li>',
+					printf( '<li><a class="demo-hover%s" rel="%s" href="%s">%s</a></li>',
+					$i,
 					sprintf( '%s/themes/%s/screenshot.png', WP_CONTENT_URL, $slug ),
 					sprintf( '%s/?dobar', $data['demo'] ),
 					$data['name']
 				);
+				$i ='';
 				}
 				?>
 			</ul>
