@@ -43,8 +43,6 @@
 		
 	/* THEME WRAPPER */	
 	.screen-wrapper {
-		background: url(images/screen-wrapper@2x.png) no-repeat 50% 50%;
-		background-size: 983px 554px;
 		height: 544px;
 		margin: 30px auto 0;
 		position: relative;
@@ -59,4 +57,21 @@
 		text-align: center;
 		top: 94px;
 		width: 790px;
+	}
+	
+
+	/* Standard-resolution devices */
+	.icons {
+		background: url(images/screen-wrapper.png) no-repeat 50% 50%;
+	}
+
+	/* High-resolution devices */
+	@media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-moz-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min-device-pixel-ratio: 1.5) {
+	    .screen-wrapper {
+	        background: url(images/screen-wrapper@2x.png) no-repeat 50% 50%;
+			background-size: 983px 544px;
+	    }
 	}
