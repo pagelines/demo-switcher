@@ -248,7 +248,7 @@ class PageLines_Selector {
 		</script>
 		
 		<div class="theme-demo-wrap">
-			<ul class="">
+			<ul class="theme-list">
 				<?php
 				foreach( $themes as $slug => $data ) {
 					printf( '<li><a class="demo-hover" rel="%s" href="%s">%s</a></li>',
@@ -260,7 +260,9 @@ class PageLines_Selector {
 				?>
 			</ul>
 			
+			<div class="mba-wrapper">
 			<?php printf( '<img class="demo-shot" src="%s/screenshot.png" />', get_template_directory_uri() ); ?>
+			</div>
 			
 		</div>
 		<?php
