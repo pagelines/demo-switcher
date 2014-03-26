@@ -9,13 +9,15 @@ PageLines: true
 class PageLines_Selector {
 	
 	function __construct() {
+		
 		add_action( 'init', array( $this, 'init' ) );
+		
+
+		
 		$this->root = trailingslashit( get_theme_root() );
 		$this->url = plugins_url( '', __FILE__);
-		add_action( 'wp_head', array( $this, 'head' ) );
-		add_action( 'template_redirect', array( $this, 'draw_bar' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
-		add_shortcode( 'pl_demo_switcher', array( $this, 'shortcode' ) );
+
+	//	add_shortcode( 'pl_demo_switcher', array( $this, 'shortcode' ) );
 	}
 	
 	function scripts() {
@@ -26,13 +28,21 @@ class PageLines_Selector {
 		
 		wp_enqueue_style( 'pl_tabs' );
 
-		if( ! $this->showbar() )
-			return;
-
 		wp_enqueue_style( 'pl_bar' );
 		wp_enqueue_script( 'pl-track' );
 	}
+		
 	function init() {
+		
+		if( ! $this->showbar() )
+			return;
+		add_action( 'wp_head', array( $this, 'head' ) );
+		add_action( 'override_pagelines_body_output', array( $this, 'draw_bar' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
+		
+		add_action( 'pl_no_mobile_menu', '__return_false' );
+
+		
 		$themes = wp_get_themes();
 		$this->themes = array();
 		foreach( $themes as $slug => $theme_data ) {
@@ -185,6 +195,8 @@ class PageLines_Selector {
 		$current_theme_url = $this->themes[$slug]['demo'];
 		$current_theme_name = $this->themes[$slug]['name'];
 		?>
+		
+		<?php pagelines_register_hook( 'pagelines_site_wrap' ); // Hook ?>
 		<div id="switcher">
 
 			<ul>
@@ -224,7 +236,6 @@ class PageLines_Selector {
 <iframe id="iframe" src="<?php echo $current_theme_url; ?>" frameborder="0" width="100%"></iframe>
 </div>
 	<?php
-		
 	}
 	
 	function showbar() {
