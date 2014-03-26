@@ -196,7 +196,7 @@ class PageLines_Selector {
 		$current_theme_name = $this->themes[$slug]['name'];
 		?>
 		
-		<?php pagelines_register_hook( 'pagelines_site_wrap' ); // Hook ?>
+
 		<div id="switcher">
 
 			<ul>
@@ -239,7 +239,7 @@ class PageLines_Selector {
 	}
 	
 	function showbar() {
-		if( isset( $_GET['dobar'] ) && ! is_user_logged_in() )
+		if( isset( $_GET['dobar'] ) && ! is_user_logged_in() && ! wp_is_mobile() )
 			return true;
 	}
 	
